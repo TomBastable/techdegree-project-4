@@ -14,6 +14,11 @@
 		F2FE8D612271B4C200D914B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE8D5F2271B4C200D914B2 /* LaunchScreen.storyboard */; };
 		F2FE8D6C2271B4C200D914B2 /* Amusement_Park_EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D6B2271B4C200D914B2 /* Amusement_Park_EntryTests.swift */; };
 		F2FE8D772271B4C200D914B2 /* Amusement_Park_EntryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D762271B4C200D914B2 /* Amusement_Park_EntryUITests.swift */; };
+		F2FE8D852271B66500D914B2 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D842271B66500D914B2 /* Errors.swift */; };
+		F2FE8D872271B92200D914B2 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D862271B92200D914B2 /* Employees.swift */; };
+		F2FE8D892271C9B900D914B2 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D882271C9B900D914B2 /* AreaAccess.swift */; };
+		F2FE8D8B2271CD4500D914B2 /* Guests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D8A2271CD4500D914B2 /* Guests.swift */; };
+		F2FE8D8D2271E56F00D914B2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE8D8C2271E56F00D914B2 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		F2FE8D722271B4C200D914B2 /* Amusement Park EntryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amusement Park EntryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FE8D762271B4C200D914B2 /* Amusement_Park_EntryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amusement_Park_EntryUITests.swift; sourceTree = "<group>"; };
 		F2FE8D782271B4C200D914B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2FE8D842271B66500D914B2 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		F2FE8D862271B92200D914B2 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
+		F2FE8D882271C9B900D914B2 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
+		F2FE8D8A2271CD4500D914B2 /* Guests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guests.swift; sourceTree = "<group>"; };
+		F2FE8D8C2271E56F00D914B2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,11 @@
 				F2FE8D5D2271B4C200D914B2 /* Assets.xcassets */,
 				F2FE8D5F2271B4C200D914B2 /* LaunchScreen.storyboard */,
 				F2FE8D622271B4C200D914B2 /* Info.plist */,
+				F2FE8D842271B66500D914B2 /* Errors.swift */,
+				F2FE8D862271B92200D914B2 /* Employees.swift */,
+				F2FE8D882271C9B900D914B2 /* AreaAccess.swift */,
+				F2FE8D8A2271CD4500D914B2 /* Guests.swift */,
+				F2FE8D8C2271E56F00D914B2 /* Protocols.swift */,
 			);
 			path = "Amusement Park Entry";
 			sourceTree = "<group>";
@@ -256,7 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FE8D892271C9B900D914B2 /* AreaAccess.swift in Sources */,
 				F2FE8D592271B4C000D914B2 /* ViewController.swift in Sources */,
+				F2FE8D8D2271E56F00D914B2 /* Protocols.swift in Sources */,
+				F2FE8D872271B92200D914B2 /* Employees.swift in Sources */,
+				F2FE8D852271B66500D914B2 /* Errors.swift in Sources */,
+				F2FE8D8B2271CD4500D914B2 /* Guests.swift in Sources */,
 				F2FE8D572271B4C000D914B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
