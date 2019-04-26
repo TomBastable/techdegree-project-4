@@ -19,14 +19,15 @@ protocol Guests: Entrant {
     
     var rideAccess: Bool {get}
     var guestType: GuestTypes {get}
+    var foodDiscount: Double {get}
+    var merchDiscount: Double {get}
     
 }
 
 protocol VIP: Guests {
     
     var queueSkip: Bool {get}
-    var foodDiscount: Double {get}
-    var merchDiscount: Double {get}
+
     
 }
 

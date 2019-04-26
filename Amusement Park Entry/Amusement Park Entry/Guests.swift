@@ -26,12 +26,16 @@ class classicGuest: Guests {
     var areaAccess: [AreaAccess]
     var rideAccess: Bool
     var guestType: GuestTypes
+    var foodDiscount: Double
+    var merchDiscount: Double
     
     init() {
        
         self.areaAccess = [.amusementAreas]
         self.rideAccess = true
         self.guestType = .classic
+        self.foodDiscount = 0.0
+        self.merchDiscount = 0.0
     }
     
 }
@@ -64,6 +68,8 @@ class freeChildGuest: FreeChild {
     var rideAccess: Bool
     var dateOfBirth: Date?
     var guestType: GuestTypes
+    var foodDiscount: Double
+    var merchDiscount: Double
     
     init(dateOfBirth: Date?) throws {
         
@@ -76,6 +82,8 @@ class freeChildGuest: FreeChild {
         self.rideAccess = true
         self.dateOfBirth = dateOfBirth
         self.guestType = .freeChild
+        self.foodDiscount = 0.0
+        self.merchDiscount = 0.0
         
     }
     
