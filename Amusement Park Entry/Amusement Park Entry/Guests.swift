@@ -21,6 +21,8 @@ enum GuestTypes {
     
 }
 
+// All below are laid out as per business matrix. Little explination required.
+
 class classicGuest: Guests {
     
     var areaAccess: [AreaAccess]
@@ -38,10 +40,6 @@ class classicGuest: Guests {
         self.foodDiscount = 0.0
         self.merchDiscount = 0.0
         self.uniquePassID = Int.random(in: 0...100000)
-    }
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
     }
 }
 
@@ -66,10 +64,6 @@ class vipGuest: VIP {
         self.guestType = .vip
         self.uniquePassID = Int.random(in: 0...100000)
         
-    }
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
     }
 }
 
@@ -100,10 +94,7 @@ class freeChildGuest: FreeChild {
         self.uniquePassID = Int.random(in: 0...100000)
         
     }
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
-    }
+
 }
 
 

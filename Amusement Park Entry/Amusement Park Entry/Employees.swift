@@ -21,6 +21,8 @@ enum EmployeeRole {
     
 }
 
+// All below are laid out as per business matrix. Little explination required.
+
 class foodServiceEmployee: Employee {
     
     let firstName: String?
@@ -83,10 +85,7 @@ class foodServiceEmployee: Employee {
         
     }
     
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
-    }
+
     
 }
 
@@ -152,10 +151,7 @@ class rideServiceEmployee: Employee {
         
     }
     
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
-    }
+
     
 }
 
@@ -221,10 +217,7 @@ class maintenanceEmployee: Employee {
         
     }
     
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
-    }
+
     
 }
 
@@ -288,11 +281,6 @@ class managerEmployee: Employee {
         self.zipPostCode = zipPostCode
         self.uniquePassID = Int.random(in: 0...100000)
         
-    }
-    
-    func equals (compareTo:Entrant) -> Bool {
-        return
-            self.uniquePassID == compareTo.uniquePassID
     }
 
     

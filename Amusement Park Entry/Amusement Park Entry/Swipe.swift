@@ -18,7 +18,6 @@ func passSwipe(swipeLocation: AreaAccess, pass: Entrant){
         print("Swipe complete")
     }
     else {
-        
     // Break up pass data
     var entrantName: String = ""
     var entrantAddress: String = ""

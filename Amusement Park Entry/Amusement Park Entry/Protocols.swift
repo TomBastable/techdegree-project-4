@@ -13,7 +13,6 @@ protocol Entrant {
     var areaAccess: [AreaAccess] {get}
     var uniquePassID: Int {get}
     
-    func equals(compareTo:Entrant) -> Bool
 }
 
 protocol Guests: Entrant {
