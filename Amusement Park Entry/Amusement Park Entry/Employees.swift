@@ -36,37 +36,39 @@ class foodServiceEmployee: Employee {
     let rideAccess: Bool = true
     let queueSkip: Bool = false
     
+    var uniquePassID: Int
+    
     let employeeRole: EmployeeRole = .foodServices
     let areaAccess: [AreaAccess] = [.kitchenAreas, .amusementAreas]
     
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipPostCode: String?) throws {
         
-        guard let firstName = firstName else{
+        guard let firstName = firstName, !firstName.isEmpty else{
             print("First Name Required")
             throw PassCreationError.firstNameRequired
         }
         
-        guard let lastName = lastName else{
+        guard let lastName = lastName, !lastName.isEmpty else{
             print("Last Name Required")
             throw PassCreationError.lastNameRequired
         }
         
-        guard let streetAddress = streetAddress else{
+        guard let streetAddress = streetAddress, !streetAddress.isEmpty else{
             print("Street Address Required")
             throw PassCreationError.streetAddressRequired
         }
         
-        guard let city = city else{
+        guard let city = city, !city.isEmpty else{
             print("City is Required")
             throw PassCreationError.cityRequired
         }
         
-        guard let state = state else{
+        guard let state = state, !state.isEmpty else{
             print("State is Required")
             throw PassCreationError.stateRequired
         }
         
-        guard let zipPostCode = zipPostCode else{
+        guard let zipPostCode = zipPostCode, !zipPostCode.isEmpty else{
             print("Zip / Postcode Required")
             throw PassCreationError.zipRequired
         }
@@ -77,7 +79,13 @@ class foodServiceEmployee: Employee {
         self.city = city
         self.state = state
         self.zipPostCode = zipPostCode
+        self.uniquePassID = Int.random(in: 0...100000)
         
+    }
+    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
     }
     
 }
@@ -97,37 +105,39 @@ class rideServiceEmployee: Employee {
     let rideAccess: Bool = true
     let queueSkip: Bool = false
     
+    var uniquePassID: Int
+    
     let employeeRole: EmployeeRole = .rideServices
     let areaAccess: [AreaAccess] = [.rideControlAreas, .amusementAreas]
     
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipPostCode: String?) throws {
         
-        guard let firstName = firstName else{
+        guard let firstName = firstName, !firstName.isEmpty else{
             print("First Name Required")
             throw PassCreationError.firstNameRequired
         }
         
-        guard let lastName = lastName else{
+        guard let lastName = lastName, !lastName.isEmpty else{
             print("Last Name Required")
             throw PassCreationError.lastNameRequired
         }
         
-        guard let streetAddress = streetAddress else{
+        guard let streetAddress = streetAddress, !streetAddress.isEmpty else{
             print("Street Address Required")
             throw PassCreationError.streetAddressRequired
         }
         
-        guard let city = city else{
+        guard let city = city, !city.isEmpty else{
             print("City is Required")
             throw PassCreationError.cityRequired
         }
         
-        guard let state = state else{
+        guard let state = state, !state.isEmpty else{
             print("State is Required")
             throw PassCreationError.stateRequired
         }
         
-        guard let zipPostCode = zipPostCode else{
+        guard let zipPostCode = zipPostCode, !zipPostCode.isEmpty else{
             print("Zip / Postcode Required")
             throw PassCreationError.zipRequired
         }
@@ -138,7 +148,13 @@ class rideServiceEmployee: Employee {
         self.city = city
         self.state = state
         self.zipPostCode = zipPostCode
+        self.uniquePassID = Int.random(in: 0...100000)
         
+    }
+    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
     }
     
 }
@@ -158,37 +174,39 @@ class maintenanceEmployee: Employee {
     let rideAccess: Bool = true
     let queueSkip: Bool = false
     
+    var uniquePassID: Int
+    
     let employeeRole: EmployeeRole = .maintenance
     let areaAccess: [AreaAccess] = [.rideControlAreas, .amusementAreas, .kitchenAreas, .maintenanceAreas]
     
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipPostCode: String?) throws {
         
-        guard let firstName = firstName else{
+        guard let firstName = firstName, !firstName.isEmpty else{
             print("First Name Required")
             throw PassCreationError.firstNameRequired
         }
         
-        guard let lastName = lastName else{
+        guard let lastName = lastName, !lastName.isEmpty else{
             print("Last Name Required")
             throw PassCreationError.lastNameRequired
         }
         
-        guard let streetAddress = streetAddress else{
+        guard let streetAddress = streetAddress, !streetAddress.isEmpty else{
             print("Street Address Required")
             throw PassCreationError.streetAddressRequired
         }
         
-        guard let city = city else{
+        guard let city = city, !city.isEmpty else{
             print("City is Required")
             throw PassCreationError.cityRequired
         }
         
-        guard let state = state else{
+        guard let state = state, !state.isEmpty else{
             print("State is Required")
             throw PassCreationError.stateRequired
         }
         
-        guard let zipPostCode = zipPostCode else{
+        guard let zipPostCode = zipPostCode, !zipPostCode.isEmpty else{
             print("Zip / Postcode Required")
             throw PassCreationError.zipRequired
         }
@@ -199,7 +217,13 @@ class maintenanceEmployee: Employee {
         self.city = city
         self.state = state
         self.zipPostCode = zipPostCode
+        self.uniquePassID = Int.random(in: 0...100000)
         
+    }
+    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
     }
     
 }
@@ -219,37 +243,39 @@ class managerEmployee: Employee {
     let rideAccess: Bool = true
     let queueSkip: Bool = false
     
+    var uniquePassID: Int
+    
     let employeeRole: EmployeeRole = .manager
     let areaAccess: [AreaAccess] = [.rideControlAreas, .amusementAreas, .kitchenAreas, .maintenanceAreas, .officeAreas]
     
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipPostCode: String?) throws {
         
-        guard let firstName = firstName else{
+        guard let firstName = firstName, !firstName.isEmpty else{
             print("First Name Required")
             throw PassCreationError.firstNameRequired
         }
         
-        guard let lastName = lastName else{
+        guard let lastName = lastName, !lastName.isEmpty else{
             print("Last Name Required")
             throw PassCreationError.lastNameRequired
         }
         
-        guard let streetAddress = streetAddress else{
+        guard let streetAddress = streetAddress, !streetAddress.isEmpty else{
             print("Street Address Required")
             throw PassCreationError.streetAddressRequired
         }
         
-        guard let city = city else{
+        guard let city = city, !city.isEmpty else{
             print("City is Required")
             throw PassCreationError.cityRequired
         }
         
-        guard let state = state else{
+        guard let state = state, !state.isEmpty else{
             print("State is Required")
             throw PassCreationError.stateRequired
         }
         
-        guard let zipPostCode = zipPostCode else{
+        guard let zipPostCode = zipPostCode, !zipPostCode.isEmpty else{
             print("Zip / Postcode Required")
             throw PassCreationError.zipRequired
         }
@@ -260,8 +286,15 @@ class managerEmployee: Employee {
         self.city = city
         self.state = state
         self.zipPostCode = zipPostCode
+        self.uniquePassID = Int.random(in: 0...100000)
         
     }
+    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
+    }
+
     
 }
 

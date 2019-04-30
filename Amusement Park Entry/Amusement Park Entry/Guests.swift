@@ -28,6 +28,7 @@ class classicGuest: Guests {
     var guestType: GuestTypes
     var foodDiscount: Double
     var merchDiscount: Double
+    var uniquePassID: Int
     
     init() {
        
@@ -36,9 +37,14 @@ class classicGuest: Guests {
         self.guestType = .classic
         self.foodDiscount = 0.0
         self.merchDiscount = 0.0
+        self.uniquePassID = Int.random(in: 0...100000)
     }
-    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
+    }
 }
+
 
 class vipGuest: VIP {
     
@@ -48,6 +54,7 @@ class vipGuest: VIP {
     var areaAccess: [AreaAccess]
     var rideAccess: Bool
     var guestType: GuestTypes
+    var uniquePassID: Int
     
     init() {
         
@@ -57,10 +64,15 @@ class vipGuest: VIP {
         self.foodDiscount = 10.0
         self.merchDiscount = 20.0
         self.guestType = .vip
+        self.uniquePassID = Int.random(in: 0...100000)
         
     }
-    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
+    }
 }
+
 
 class freeChildGuest: FreeChild {
     
@@ -70,6 +82,7 @@ class freeChildGuest: FreeChild {
     var guestType: GuestTypes
     var foodDiscount: Double
     var merchDiscount: Double
+    var uniquePassID: Int
     
     init(dateOfBirth: Date?) throws {
         
@@ -84,9 +97,13 @@ class freeChildGuest: FreeChild {
         self.guestType = .freeChild
         self.foodDiscount = 0.0
         self.merchDiscount = 0.0
+        self.uniquePassID = Int.random(in: 0...100000)
         
     }
-    
+    func equals (compareTo:Entrant) -> Bool {
+        return
+            self.uniquePassID == compareTo.uniquePassID
+    }
 }
 
 

@@ -8,8 +8,17 @@
 
 import Foundation
 
+var fiveSecondBlockedEntrant: [Int] = []
+
 func passSwipe(swipeLocation: AreaAccess, pass: Entrant){
     
+    //check for double swipe
+    if fiveSecondBlockedEntrant.contains(pass.uniquePassID){
+        print("Access Denied - pass was swiped too recently.")
+        print("Swipe complete")
+    }
+    else {
+        
     // Break up pass data
     var entrantName: String = ""
     var entrantAddress: String = ""
@@ -98,9 +107,6 @@ func passSwipe(swipeLocation: AreaAccess, pass: Entrant){
         
     }
     
-    
-    
-    
     for location in entrantAreaAccess {
         if swipeLocation == location{
             entrantDoesHaveAccess = true
@@ -110,6 +116,21 @@ func passSwipe(swipeLocation: AreaAccess, pass: Entrant){
     if entrantDoesHaveAccess {
         
         print("Access Granted - they have access to this area.")
+        print("Additional Data:")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM"
+        
+        let date: Date? = entrantDateOfBirth
+        print(dateFormatter.string(from: date!))
+        
+        let todaysDate: Date? = Date()
+        
+        print(dateFormatter.string(from: todaysDate!))
+        
+        if dateFormatter.string(from: date!) == dateFormatter.string(from: todaysDate!){
+            print("Happy Birthday my Dear!")
+        }
         
         if entrantName != "" {
             print("This pass is registered to \(entrantName)")
@@ -149,4 +170,25 @@ func passSwipe(swipeLocation: AreaAccess, pass: Entrant){
     
     
     print("Swipe Complete.")
+    
+    fiveSecondBlockedEntrant.append(pass.uniquePassID)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        
+        let index = fiveSecondBlockedEntrant.firstIndex(where: { (item) -> Bool in
+            item == pass.uniquePassID // test if this is the item you're looking for
+        })
+        
+        fiveSecondBlockedEntrant.remove(at: index!)
+        
+        print("Pass is now unblocked \(pass.uniquePassID)")
+        
+    })
+    }
+}
+
+extension Array where Element: Equatable {
+    func indexes(of element: Element) -> [Int] {
+        return self.enumerated().filter({ element == $0.element }).map({ $0.offset })
+    }
 }

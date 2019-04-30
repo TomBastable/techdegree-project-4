@@ -11,7 +11,9 @@ import Foundation
 protocol Entrant {
     
     var areaAccess: [AreaAccess] {get}
+    var uniquePassID: Int {get}
     
+    func equals(compareTo:Entrant) -> Bool
 }
 
 protocol Guests: Entrant {
@@ -28,7 +30,6 @@ protocol VIP: Guests {
     
     var queueSkip: Bool {get}
 
-    
 }
 
 protocol FreeChild: Guests {
